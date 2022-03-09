@@ -1,27 +1,32 @@
 import React from 'react'
-import AddCourse from '../../components/AddCourse/AddCourse'
-import Nav from '../../components/Nav/Nav'
-import Searchbar from '../../components/Searchbar/Searchbar'
-import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Searchbar from '../../components/Searchbar/Searchbar';
+import CourseList from '../CourseList/CourseList';
+import { useState } from "react";
 
-const HomePage = () => {
 
-  const [updated, setUpdated] = useState(true);
+const HomePage = (props) => {
+  const {
+    courses
+  } = props;
 
-  const handleRefresh = () => {
-    setUpdated(!setUpdated) 
+  const [filteredCourses, setFilteredCourses] = useState(courses);
+
+  const handleSearch = (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    const tempCourses = courses.filter(obj => {
+      return obj.name.toLowerCase().includes(searchTerm)
+      })
+    if (searchTerm.length === 0) {
+      setFilteredCourses(courses)
+    } else {
+      setFilteredCourses(tempCourses)
+    }
   }
 
   return (
     <>
-      <Router>
-        <Nav />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route  path="/add-course" element={<AddCourse handleRefresh={handleRefresh}/>} />
-        </Routes>
-      </Router> 
+      <Searchbar handleSearch={handleSearch}/>
+      <CourseList courses={filteredCourses}/>
     </>
   )
 }
