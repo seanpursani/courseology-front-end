@@ -25,7 +25,7 @@ const App = () => {
 
   useEffect(() => {
     getCourses();
-  }, []);
+  }, [updated]);
 
   return (
   <Router>
