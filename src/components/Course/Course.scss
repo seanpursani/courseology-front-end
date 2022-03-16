@@ -1,16 +1,19 @@
+@use "../../assets/colours.scss" as *;
+
 span {
   font-weight:400;
   font-size: 16px;
-  color: blueviolet;
+  color: $secondary-colour;
 }
 
 .card {
   font-family:monospace;
-  background-color: #eeee;
+  background-color: $white-grey-colour;
   padding: 1em;
-  font-size: 16px;
+  font-size: 1em;
 
   &__name {
-    font-size: 22px;
+    font-size: 2em;
+    color: $splash-colour;
   }
 }

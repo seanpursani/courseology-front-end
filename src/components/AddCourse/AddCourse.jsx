@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import { useNavigate, Link } from "react-router-dom";
 import "./AddCourse.scss"
 
 const AddCourse = (props) => {
@@ -11,6 +12,8 @@ const AddCourse = (props) => {
     price: null,
     summary: ""
   })
+
+  let navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -26,6 +29,7 @@ const AddCourse = (props) => {
     .catch(err => console.log(err))
      e.target.reset();
      handleRefresh()
+     navigate("/courseology");
   }
 
 
@@ -38,7 +42,13 @@ const AddCourse = (props) => {
         <input type="text" placeholder="course duration" onInput={(e) => setCourse({ ...course, duration: e.target.value })} />
         <input type="text" placeholder="course price" onInput={(e) => setCourse({ ...course, price: e.target.value })} />
         <input type="text" placeholder="course summary" onInput={(e) => setCourse({ ...course, summary: e.target.value })} />
-        <button type="submit" className="btn">Submit</button>
+        <div className='btn-wrapper'>
+          <Link to="/courseology">
+            <button className="btn">Cancel</button>
+          </Link>
+          <button onSubmit={handleSubmit} type="submit" className="btn">Submit</button>
+        </div>
+
       </form>
     </div>
   )

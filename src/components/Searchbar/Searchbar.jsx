@@ -7,7 +7,7 @@ const Searchbar = (props) => {
   return (
     <div className='search'>
       <div className='search__container'>
-        <label htmlFor="search">Find your next course!...</label>
+        <label className='search__container__header' htmlFor="search">Find your next course!...</label>
         <input className='search__container__input' type="text" placeholder='Search...' onChange={handleSearch}/>
         <div className='search__icon'></div>
       </div>
