@@ -14,7 +14,7 @@ const AddCourse = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    fetch('http://localhost:8080/course', {
+    fetch('https://courseology.nw.r.appspot.com/course', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

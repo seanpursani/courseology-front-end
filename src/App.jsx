@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 
 const App = () => {
   
-  const [courses, setCourses] = useState([]);
+  const [courses, setCourses] = useState(null);
   const [updated, setUpdated] = useState(true);
 
   const handleRefresh = () => {
@@ -16,7 +16,7 @@ const App = () => {
   }
 
   const getCourses = () => {
-    fetch("http://localhost:8080/courses")
+    fetch("https://courseology.nw.r.appspot.com/courses")
       .then(res => res.json())
       .then(json => setCourses(json))
       .catch(err => console.log(err))
@@ -32,7 +32,7 @@ const App = () => {
     <Nav />
     <Routes>
       <Route path="/add-course" element={<AddCourse handleRefresh={handleRefresh}/>} />
-      <Route path="/Courseology" element={<HomePage courses={courses}/> } />
+      {courses && <Route path="/courseology" element={<HomePage courses={courses}/> } />}
     </Routes>
   </Router> 
   );
