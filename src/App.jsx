@@ -20,7 +20,6 @@ const App = () => {
       .then(res => res.json())
       .then(json => setCourses(json))
       .catch(err => console.log(err))
-      console.log(courses);
   }
 
   useEffect(() => {

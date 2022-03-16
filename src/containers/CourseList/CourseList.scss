@@ -3,6 +3,6 @@
 .course-list {
   padding: 2em;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(186px, 2fr));
+  grid-template-columns: repeat(auto-fill, 1fr);
   gap: 0.5em
 }

@@ -28,7 +28,7 @@ const AddCourse = (props) => {
     .then((json => console.log(json)))
     .catch(err => console.log(err))
      e.target.reset();
-     handleRefresh()
+     handleRefresh();
      navigate("/courseology");
   }
 
@@ -46,7 +46,7 @@ const AddCourse = (props) => {
           <Link to="/courseology">
             <button className="btn">Cancel</button>
           </Link>
-          <button onSubmit={handleSubmit} type="submit" className="btn">Submit</button>
+          <button type="submit" className="btn">Submit</button>
         </div>
 
       </form>
