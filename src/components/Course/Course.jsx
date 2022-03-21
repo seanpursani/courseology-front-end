@@ -7,11 +7,12 @@ const {
   courseLocation,
   courseDuration,
   coursePrice,
-  courseSummary
+  courseSummary,
+  datatestid
 } = props;
 
   return (
-    <div className="card">
+    <div className="card" data-testid= {datatestid}>
         <h1 className="card__name">{courseName}</h1>
         <p className="card__location"><span>Location: </span>{courseLocation}</p>
         <p className="card__duration"><span>Duration: </span>{courseDuration}</p>

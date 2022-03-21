@@ -10,6 +10,7 @@ const App = () => {
   
   const [courses, setCourses] = useState(null);
   const [updated, setUpdated] = useState(true);
+  const [home, setHome] = useState(true);
 
   const handleRefresh = () => {
     setUpdated(!setUpdated) 
@@ -24,6 +25,7 @@ const App = () => {
 
   useEffect(() => {
     getCourses();
+    console.log(courses)
   }, [updated]);
 
   return (
