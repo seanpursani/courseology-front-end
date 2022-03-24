@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./AddCourse.scss"
+import { type } from '@testing-library/user-event/dist/type';
+import { number } from 'yup';
 
 const AddCourse = (props) => {
 
@@ -18,18 +20,19 @@ const AddCourse = (props) => {
 
   const onSubmit = (data) => {
     setCourse(JSON.stringify(data))
-    fetch('https://courseology.nw.r.appspot.com/course', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(course)
-    })
-    .then((response) => response.json())
-    .then((json => console.log(json)))
-    .catch(err => console.log(err))
-     handleRefresh();
-     navigate("/courseology");
+    alert(course)
+    // fetch('https://courseology.nw.r.appspot.com/course', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(course)
+    // })
+    // .then((response) => response.json())
+    // .then((json => console.log(json)))
+    // .catch(err => console.log(err))
+    //  handleRefresh();
+    //  navigate("/courseology");
   };
 
   return (
