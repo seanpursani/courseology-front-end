@@ -19,13 +19,14 @@
 
     &__input {
       width: 33%;
-      border-radius: 2px;
+      height: 30px;
+      border-radius: 5px;
       background-color: $white-colour;
     }
 
     &__header {
       color: $splash-colour;
-      font-size: larger;
+      font-size: 30px;
     }
   }
 

@@ -10,14 +10,13 @@ const App = () => {
   
   const [courses, setCourses] = useState(null);
   const [updated, setUpdated] = useState(true);
-  const [home, setHome] = useState(true);
 
   const handleRefresh = () => {
     setUpdated(!setUpdated) 
   }
 
   const getCourses = () => {
-    fetch("https://courseology.nw.r.appspot.com/courses")
+    fetch("http://courseology.nw.r.appspot.com/courses")
       .then(res => res.json())
       .then(json => setCourses(json))
       .catch(err => console.log(err))

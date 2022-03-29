@@ -12,27 +12,30 @@ const AddCourse = (props) => {
     mode: 'onSubmit' 
   });
 
-  const {handleRefresh} = props;
-
-  const [course, setCourse] = useState()
+  const { handleRefresh } = props;
 
   const onSubmit = (data) => {
-    const tempData = JSON.stringify(data)
-    setCourse(tempData)
-    alert(course)
-    fetch('https://courseology.nw.r.appspot.com/course', {
+    const price = parseInt(data.price)
+    const tempData = {... data}
+    tempData.price = price;
+    console.log(tempData)
+    postCourse(tempData)
+    handleRefresh();
+    navigate("/courseology");
+  };
+
+  const postCourse = (data) => {
+    fetch('http://courseology.nw.r.appspot.com/course', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(course)
+      body: JSON.stringify(data)
     })
     .then((response) => response.json())
     .then((json => console.log(json)))
     .catch(err => console.log(err))
-     handleRefresh();
-    //  navigate("/courseology");
-  };
+  }
 
   return (
     <div className="log-form">
