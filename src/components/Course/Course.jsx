@@ -14,10 +14,10 @@ const {
   return (
     <div className="card" data-testid= {datatestid}>
         <h1 className="card__name">{courseName}</h1>
-        <p className="card__location"><span>Location: </span>{courseLocation}</p>
-        <p className="card__duration"><span>Duration: </span>{courseDuration}</p>
-        <p className="card__price"><span>Cost: </span>£{coursePrice}</p>
-        <p className="card__summary"><span>Summary: </span>{courseSummary}</p>
+        <p className="card__details"><span>Location: </span>{courseLocation}</p>
+        <p className="card__details"><span>Duration: </span>{courseDuration}</p>
+        <p className="card__details"><span>Cost: </span>£{coursePrice}</p>
+        <p className="card__details"><span>Summary: </span>{courseSummary}</p>
     </div>
   )
 }
