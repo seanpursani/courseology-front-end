@@ -1,0 +1,36 @@
+@use "../../assets/colours.scss" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: $white-grey-colour;
+}
+
+.header {
+  padding-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  
+  &__title {
+    font-size: 2rem;
+    font-weight: 300;
+    color: $primary-colour;
+  }
+
+  &__text {
+    font-size: 1rem;
+    font-weight: 100;
+    padding-bottom: 1rem;
+    color: $dark-colour;
+  }
+
+  &__img {
+    border-radius: 3px;
+    border: 2px solid $splash-colour;
+    width: 90vw;
+  }
+}

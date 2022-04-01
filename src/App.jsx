@@ -4,10 +4,11 @@ import Nav from '././components/Nav/Nav'
 import HomePage from './containers/HomePage/HomePage';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { useState, useEffect } from "react";
+import { render } from '@testing-library/react';
+import Landing from './components/Landing/Landing';
 
 
 const App = () => {
-  
   const [courses, setCourses] = useState(null);
   const [updated, setUpdated] = useState(true);
 
@@ -29,8 +30,9 @@ const App = () => {
 
   return (
   <Router>
-    <Nav />
+    <Nav/>
     <Routes>
+      <Route path="/" element={<Landing />}></Route>
       <Route path="/add-course" element={<AddCourse handleRefresh={handleRefresh}/>} />
       {courses && <Route path="/courseology" element={<HomePage courses={courses}/> } />}
     </Routes>
