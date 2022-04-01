@@ -39,33 +39,37 @@ const AddCourse = (props) => {
 
   return (
     <div className="log-form">
-      <h2>Add A New Course</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <h2 className='log-form__header'>Add A New Course</h2>
+      <form className="log-form__form" onSubmit={handleSubmit(onSubmit)}>
         <input
+          className='log-form__form__input-area'
           type="text" 
           placeholder="course name" 
           {...register("name", {
             required: "Please enter a course name"
           })} 
         />
-        {errors.name && <p className='log-form__error'>{errors.name.message}</p>}
+        {errors.name && <p className="log-form__form__error">{errors.name.message}</p>}
         <input 
+          className='log-form__form__input-area'
           type="text" 
           placeholder="course location" 
           {...register("location", {
             required: "Enter a course location"
           })} 
         />
-        {errors.location && <p className='log-form__error'>{errors.location.message}</p>}
+        {errors.location && <p className="log-form__form__error">{errors.location.message}</p>}
         <input 
+          className='log-form__form__input-area'
           type="text" 
           placeholder="course duration" 
           {...register("duration", {
             required: "Enter a course duration"
           })} 
         />
-        {errors.duration && <p className='log-form__error'>{errors.duration.message}</p>}
+        {errors.duration && <p className="log-form__form__error">{errors.duration.message}</p>}
         <input 
+          className='log-form__form__input-area'
           type="text" 
           placeholder="course price" 
           {...register("price", {
@@ -76,16 +80,17 @@ const AddCourse = (props) => {
             required: "Enter a valid course price"
           })} 
         />
-        {errors.price && <p className='log-form__error'>{errors.price.message}</p>}
+        {errors.price && <p className="log-form__form__error">{errors.price.message}</p>}
         <input 
+          className='log-form__form__input-area'
           type="text" 
           placeholder="course summary" 
           {...register("summary", {
             required: "Enter a course summary"
           })} 
         />
-        {errors.summary && <p className='log-form__error'>{errors.summary.message}</p>}
-        <div className='btn-wrapper'>
+        {errors.summary && <p className="log-form__form__error">{errors.summary.message}</p>}
+        <div className='log-form__form__btn-wrapper'>
           <Link to="/courseology">
             <button type="submit" className="btn">Cancel</button>
           </Link>
